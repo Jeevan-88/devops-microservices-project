@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LeadGen Pro - Automated lead generation and management platform">
+    <title>LeadGen Pro | Automated Lead Generation Platform</title>
+    <link rel="stylesheet" href="dashboard-styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">LeadGen Pro</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li><a href="../portfolio/index.html" class="nav-link">About</a></li>
+                <li><a href="#" class="btn-login">Login</a></li>
+                <li><a href="#" class="btn-signup">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="badge">🚀 AI-Powered Lead Generation</div>
+                <h1 class="hero-title">Convert More Leads.<br />Automate Your Growth.</h1>
+                <p class="hero-description">
+                    Stop losing potential customers. Our intelligent platform captures, scores, and nurtures
+                    leads automatically—so you can focus on closing deals, not chasing prospects.
+                </p>
+                <div class="hero-cta">
+                    <button class="btn-primary" onclick="openApp()">Start Free Trial</button>
+                    <button class="btn-secondary">Watch Demo</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">10K+</div>
+                        <div class="stat-label">Active Users</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">250K+</div>
+                        <div class="stat-label">Leads Generated</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Satisfaction Rate</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="dashboard-mockup glass-card">
+                    <div class="mockup-header">
+                        <div class="mockup-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="mockup-title">Lead Dashboard</div>
+                    </div>
+                    <div class="mockup-content">
+                        <div class="metric-card">
+                            <div class="metric-value">2,847</div>
+                            <div class="metric-label">Total Leads</div>
+                            <div class="metric-trend">↑ 23% this month</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">68%</div>
+                            <div class="metric-label">Conversion Rate</div>
+                            <div class="metric-trend">↑ 12% this month</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Everything You Need to Scale</h2>
+                <p class="section-subtitle">Powerful features designed for modern sales teams</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>AI Lead Scoring</h3>
+                    <p>Automatically identify high-value prospects using machine learning algorithms that analyze
+                        behavior and engagement patterns.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Instant Capture</h3>
+                    <p>Capture leads from any source—website forms, social media, ads—all in one centralized dashboard.
+                    </p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">📧</div>
+                    <h3>Email Automation</h3>
+                    <p>Set up personalized drip campaigns that nurture leads automatically based on their actions and
+                        preferences.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Real-time Analytics</h3>
+                    <p>Track conversion rates, ROI, and campaign performance with comprehensive dashboards and reports.
+                    </p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">🔗</div>
+                    <h3>Seamless Integrations</h3>
+                    <p>Connect with your favorite tools—CRM, email providers, payment processors, and more.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Enterprise Security</h3>
+                    <p>Bank-level encryption, OAuth authentication, and GDPR compliance to keep your data safe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Simple, Transparent Pricing</h2>
+                <p class="section-subtitle">Choose the plan that fits your business needs</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card glass-card">
+                    <div class="plan-name">Starter</div>
+                    <div class="plan-price">
+                        <span class="currency">$</span>
+                        <span class="amount">29</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✓ 500 leads/month</li>
+                        <li>✓ Basic email automation</li>
+                        <li>✓ Lead scoring</li>
+                        <li>✓ Email support</li>
+                        <li>✗ Advanced analytics</li>
+                        <li>✗ API access</li>
+                    </ul>
+                    <button class="plan-btn">Get Started</button>
+                </div>
+                <div class="pricing-card glass-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="plan-name">Professional</div>
+                    <div class="plan-price">
+                        <span class="currency">$</span>
+                        <span class="amount">99</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✓ 5,000 leads/month</li>
+                        <li>✓ Advanced automation</li>
+                        <li>✓ AI lead scoring</li>
+                        <li>✓ Priority support</li>
+                        <li>✓ Advanced analytics</li>
+                        <li>✓ Integrations</li>
+                    </ul>
+                    <button class="plan-btn primary">Get Started</button>
+                </div>
+                <div class="pricing-card glass-card">
+                    <div class="plan-name">Enterprise</div>
+                    <div class="plan-price">
+                        <span class="currency">$</span>
+                        <span class="amount">299</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✓ Unlimited leads</li>
+                        <li>✓ Full automation suite</li>
+                        <li>✓ Custom AI models</li>
+                        <li>✓ 24/7 dedicated support</li>
+                        <li>✓ Custom analytics</li>
+                        <li>✓ Full API access</li>
+                    </ul>
+                    <button class="plan-btn">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Trusted by Growing Businesses</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card glass-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"LeadGen Pro increased our conversion rate by 200% in just 3 months. The
+                        AI scoring is incredibly accurate."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <div class="author-name">Sarah Johnson</div>
+                            <div class="author-role">CEO, TechStart Inc.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"The automation features saved our sales team 15 hours per week. Now we
+                        focus on closing, not data entry."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <div class="author-name">Michael Chen</div>
+                            <div class="author-role">Sales Director, GrowthCo</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Best investment we've made. The ROI tracking alone pays for itself.
+                        Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <div class="author-name">Emily Rodriguez</div>
+                            <div class="author-role">Founder, Marketing Pro</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card glass-card">
+                <h2>Ready to Transform Your Lead Generation?</h2>
+                <p>Join thousands of businesses growing faster with LeadGen Pro</p>
+                <div class="cta-buttons">
+                    <button class="btn-primary large" onclick="openApp()">Start Free Trial</button>
+                    <button class="btn-secondary large">Schedule Demo</button>
+                </div>
+                <p class="cta-note">No credit card required • 14-day free trial • Cancel anytime</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-icon">⚡</span>
+                        <span class="logo-text">LeadGen Pro</span>
+                    </div>
+                    <p>Automated lead generation for modern businesses.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <a href="#features">Features</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="app.html">Dashboard</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="../portfolio/index.html">About</a>
+                    <a href="../blog/index.html">Blog</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Security</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LeadGen Pro. Built by Avula Jeevan Yadav.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="dashboard-script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+{
+    "name": "auth-service",
+    "version": "1.0.0",
+    "description": "Authentication microservice for LeadGen Pro",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "nodemon server.js"
+    },
+    "dependencies": {
+        "express": "^4.18.2",
+        "bcryptjs": "^2.4.3",
+        "jsonwebtoken": "^9.0.2",
+        "pg": "^8.11.3",
+        "ioredis": "^5.3.2",
+        "passport": "^0.6.0",
+        "passport-google-oauth20": "^2.0.0",
+        "passport-facebook": "^3.0.0",
+        "cors": "^2.8.5"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.1"
+    }
+}

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Technical insights on microservices, cloud computing, and software engineering">
+    <title>Tech Blog | Jeevan Yadav</title>
+    <link rel="stylesheet" href="blog-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../portfolio/index.html" class="logo-text">&lt;JY /&gt;</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../portfolio/index.html" class="nav-link">Portfolio</a></li>
+                <li><a href="index.html" class="nav-link active">Blog</a></li>
+                <li><a href="../dashboard/index.html" class="nav-link nav-cta">Platform</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1 class="hero-title">Technical Insights</h1>
+            <p class="hero-subtitle">Deep dives into microservices, cloud architecture, and modern development practices
+            </p>
+            <div class="search-bar">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="9" cy="9" r="7" />
+                    <path d="M14 14l5 5" />
+                </svg>
+                <input type="text" id="searchInput" placeholder="Search articles..." />
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories-section">
+        <div class="container">
+            <div class="categories-scroll">
+                <button class="category-btn active" data-category="all">All Posts</button>
+                <button class="category-btn" data-category="microservices">Microservices</button>
+                <button class="category-btn" data-category="cloud">Cloud Computing</button>
+                <button class="category-btn" data-category="devops">DevOps</button>
+                <button class="category-btn" data-category="docker">Docker</button>
+                <button class="category-btn" data-category="react">React</button>
+                <button class="category-btn" data-category="python">Python</button>
+                <button class="category-btn" data-category="architecture">Architecture</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="featured-section">
+        <div class="container">
+            <h2 class="section-title">Featured Article</h2>
+            <article class="featured-post glass-card">
+                <div class="post-image featured-image"></div>
+                <div class="post-content">
+                    <div class="post-meta">
+                        <span class="post-category">Microservices</span>
+                        <span class="post-date">December 10, 2024</span>
+                        <span class="post-reading-time">8 min read</span>
+                    </div>
+                    <h2 class="post-title">Building Scalable Microservices: A Complete Guide</h2>
+                    <p class="post-excerpt">
+                        Explore the architecture, design patterns, and best practices for building production-ready
+                        microservices systems. Learn how to implement service discovery, API gateways, distributed
+                        tracing, and containerization with Docker and Kubernetes.
+                    </p>
+                    <div class="post-tags">
+                        <span class="tag">Microservices</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Architecture</span>
+                    </div>
+                    <a href="post.html?id=1" class="read-more">
+                        Read Article
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12l6-6-6-6" />
+                        </svg>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="posts-section">
+        <div class="container">
+            <h2 class="section-title">Latest Articles</h2>
+            <div class="posts-grid" id="postsGrid">
+                <!-- Post 1 -->
+                <article class="post-card glass-card" data-category="cloud">
+                    <div class="post-image"></div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Cloud</span>
+                            <span class="post-date">Dec 8, 2024</span>
+                        </div>
+                        <h3 class="post-title">AWS Lambda vs Traditional Servers: When to Use Serverless</h3>
+                        <p class="post-excerpt">
+                            Comprehensive comparison of serverless architecture with traditional server-based
+                            deployments,
+                            including cost analysis and use cases.
+                        </p>
+                        <div class="post-tags">
+                            <span class="tag">AWS</span>
+                            <span class="tag">Serverless</span>
+                            <span class="tag">Lambda</span>
+                        </div>
+                        <div class="post-footer">
+                            <span class="reading-time">6 min read</span>
+                            <a href="post.html?id=2" class="read-link">Read →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="post-card glass-card" data-category="docker">
+                    <div class="post-image"></div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Docker</span>
+                            <span class="post-date">Dec 5, 2024</span>
+                        </div>
+                        <h3 class="post-title">Docker Multi-Stage Builds: Optimizing Container Images</h3>
+                        <p class="post-excerpt">
+                            Learn advanced Docker techniques to reduce image sizes by up to 80% and improve
+                            build times using multi-stage builds.
+                        </p>
+                        <div class="post-tags">
+                            <span class="tag">Docker</span>
+                            <span class="tag">DevOps</span>
+                            <span class="tag">Optimization</span>
+                        </div>
+                        <div class="post-footer">
+                            <span class="reading-time">5 min read</span>
+                            <a href="post.html?id=3" class="read-link">Read →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="post-card glass-card" data-category="react">
+                    <div class="post-image"></div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">React</span>
+                            <span class="post-date">Dec 2, 2024</span>
+                        </div>
+                        <h3 class="post-title">React Performance: Memoization and Lazy Loading Strategies</h3>
+                        <p class="post-excerpt">
+                            Deep dive into React performance optimization techniques including useMemo, useCallback,
+                            React.memo, and code splitting.
+                        </p>
+                        <div class="post-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Performance</span>
+                        </div>
+                        <div class="post-footer">
+                            <span class="reading-time">7 min read</span>
+                            <a href="post.html?id=4" class="read-link">Read →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 4 -->
+                <article class="post-card glass-card" data-category="devops">
+                    <div class="post-image"></div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">DevOps</span>
+                            <span class="post-date">Nov 28, 2024</span>
+                        </div>
+                        <h3 class="post-title">CI/CD Pipeline Best Practices with GitHub Actions</h3>
+                        <p class="post-excerpt">
+                            Build robust continuous integration and deployment pipelines using GitHub Actions,
+                            including automated testing and deployment strategies.
+                        </p>
+                        <div class="post-tags">
+                            <span class="tag">CI/CD</span>
+                            <span class="tag">GitHub</span>
+                            <span class="tag">Automation</span>
+                        </div>
+                        <div class="post-footer">
+                            <span class="reading-time">9 min read</span>
+                            <a href="post.html?id=5" class="read-link">Read →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 5 -->
+                <article class="post-card glass-card" data-category="python">
+                    <div class="post-image"></div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Python</span>
+                            <span class="post-date">Nov 25, 2024</span>
+                        </div>
+                        <h3 class="post-title">FastAPI vs Flask: Choosing the Right Python Framework</h3>
+                        <p class="post-excerpt">
+                            In-depth comparison of FastAPI and Flask for building modern APIs, with performance
+                            benchmarks and real-world use cases.
+                        </p>
+                        <div class="post-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">Flask</span>
+                        </div>
+                        <div class="post-footer">
+                            <span class="reading-time">6 min read</span>
+                            <a href="post.html?id=6" class="read-link">Read →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 6 -->
+                <article class="post-card glass-card" data-category="architecture">
+                    <div class="post-image"></div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Architecture</span>
+                            <span class="post-date">Nov 20, 2024</span>
+                        </div>
+                        <h3 class="post-title">Event-Driven Architecture: Design Patterns and Implementation</h3>
+                        <p class="post-excerpt">
+                            Understanding event-driven systems, message queues, pub/sub patterns, and how to
+                            build scalable asynchronous applications.
+                        </p>
+                        <div class="post-tags">
+                            <span class="tag">Architecture</span>
+                            <span class="tag">Patterns</span>
+                            <span class="tag">Async</span>
+                        </div>
+                        <div class="post-footer">
+                            <span class="reading-time">10 min read</span>
+                            <a href="post.html?id=7" class="read-link">Read →</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-card glass-card">
+                <h2>Stay Updated</h2>
+                <p>Get the latest articles on microservices, cloud, and software engineering delivered to your inbox.
+                </p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required />
+                    <button type="submit" class="btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Avula Jeevan Yadav. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="../portfolio/index.html">Portfolio</a>
+                    <a href="../dashboard/index.html">Platform</a>
+                    <a href="https://github.com/Jeevan-88" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="blog-script.js"></script>
+</body>
+
+</html>

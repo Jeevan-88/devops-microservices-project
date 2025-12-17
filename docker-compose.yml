@@ -1,0 +1,166 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: leadgen-postgres
+    environment:
+      POSTGRES_DB: leadgen
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - leadgen-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # MongoDB Database
+  mongodb:
+    image: mongo:7-jammy
+    container_name: leadgen-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - leadgen-network
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: leadgen-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - leadgen-network
+
+  # Auth Service
+  auth-service:
+    build: ./services/auth-service
+    container_name: leadgen-auth
+    ports:
+      - "3001:3001"
+    environment:
+      PORT: 3001
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: leadgen
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      JWT_SECRET: your-super-secret-jwt-key-change-in-production
+      JWT_REFRESH_SECRET: your-super-secret-refresh-key-change-in-production
+      GOOGLE_CLIENT_ID: your-google-client-id
+      GOOGLE_CLIENT_SECRET: your-google-client-secret
+      FACEBOOK_APP_ID: your-facebook-app-id
+      FACEBOOK_APP_SECRET: your-facebook-app-secret
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    networks:
+      - leadgen-network
+    restart: unless-stopped
+
+  # Lead Service
+  lead-service:
+    build: ./services/lead-service
+    container_name: leadgen-leads
+    ports:
+      - "3002:3002"
+    environment:
+      PORT: 3002
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: leadgen
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    networks:
+      - leadgen-network
+    restart: unless-stopped
+
+  # Email Service
+  email-service:
+    build: ./services/email-service
+    container_name: leadgen-email
+    ports:
+      - "3003:3003"
+    environment:
+      PORT: 3003
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: leadgen
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      SMTP_HOST: smtp.gmail.com
+      SMTP_PORT: 587
+      SMTP_USER: your-email@gmail.com
+      SMTP_PASS: your-app-password
+      SMTP_FROM: LeadGen Pro <noreply@leadgenpro.com>
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - leadgen-network
+    restart: unless-stopped
+
+  # Blog Service
+  blog-service:
+    build: ./services/blog-service
+    container_name: leadgen-blog
+    ports:
+      - "3005:3005"
+    environment:
+      PORT: 3005
+      MONGODB_URI: mongodb://mongodb:27017/leadgen-blog
+    depends_on:
+      - mongodb
+    networks:
+      - leadgen-network
+    restart: unless-stopped
+
+  # Nginx Reverse Proxy
+  nginx:
+    image: nginx:alpine
+    container_name: leadgen-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./services/api-gateway/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./frontend:/usr/share/nginx/html:ro
+    depends_on:
+      - auth-service
+      - lead-service
+      - email-service
+      - blog-service
+    networks:
+      - leadgen-network
+    restart: unless-stopped
+
+networks:
+  leadgen-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  mongo_data:
+  redis_data:
